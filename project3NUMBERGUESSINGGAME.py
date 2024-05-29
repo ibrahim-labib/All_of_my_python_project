@@ -12,7 +12,7 @@ def guess(x):
     print(f"Yay , you successfully guessed the number which is {guess}")
 guess(10)
 
-#If you want to computer play against for you :)
+#If you want computer to play against for you :)
 import random
 
 def computer_guess(x):
