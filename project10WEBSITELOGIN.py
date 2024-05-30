@@ -3,7 +3,7 @@ import random
 def captcha():
     words = ["pizza", "burger", "pasta", "chocolate", "steak"]
     word = random.choice(words)
-    print(f"fboywiuefgviuegfpVF{word}iweugfriwy4geufrpw")
+    print(f"fboywiuefgviuegfpVF{word}iweugfriwy4geufrpw") #random alphabet so that robot can not understand :)
     user_guess = input("Enter that displayed word: ")
     if user_guess == word:
         return True
