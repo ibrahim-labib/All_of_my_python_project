@@ -3,14 +3,14 @@ import random
 def captcha():
     words = ["pizza", "burger", "pasta", "chocolate", "steak"]
     word = random.choice(words)
-    print(f"fboywiuefgviuegfpVF{word}iweugfriwy4geufrpw") #random alphabet so that robot can not understand :)
+    print(f"fboywiuefgviuegfpVF{word}iweugfriwy4geufrpw") # random alphabet so that robot can not understand :)
     user_guess = input("Enter that displayed word: ")
     if user_guess == word:
         return True
 
 def display():
     login_user = "spiderman"
-    login_pass = 12345
+    login_pass = "12345"
 
     count = 0
     lim = 4
@@ -18,7 +18,7 @@ def display():
     
     while count < lim:
         user = input("Enter your username: ")
-        user_pass = int(input("Enter your password: "))
+        user_pass = input("Enter your password: ")
         
         if user == login_user and user_pass == login_pass:
             print("Please make sure you are not a Robot")
