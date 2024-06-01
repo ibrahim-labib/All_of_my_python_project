@@ -1,16 +1,43 @@
 import random
 
-
-def pass_generator():
-    print("Welcome to password generator.")
-    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@&#"
-    pass_amount = int(input("Number of passwords: "))
-    pass_length = int(input("Password length:"))
-
-    for pswrd in range(pass_amount):
+def password_generator(num_password, password_lenght):
+    passwords = []
+    char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@&#"
+    for i in range(num_password):
         password = ""
-        for length in range(pass_length):
-            password += random.choice(chars)
-        print(password)
+        for i in range(password_lenght):
+            password += random.choice(char)
+        passwords.append(password)
+    
+    return passwords
 
-pass_generator()
+
+def valid_int(promt):
+    while True:
+        try:
+            value = int(input(promt))
+            if value < 0:
+                print("Please enter a positive integer value.")
+            else:
+                return value
+        except ValueError:
+            print("Please enter a valid integer.")
+
+
+def main_screen():
+    while True:
+        print("Welcome to the password generator.")
+        num_password = valid_int("Number of password: ")
+        password_lenght = valid_int("Password lenght: ")
+        passwords = password_generator(num_password,password_lenght)
+
+        
+        for password in passwords:
+            print(password)
+
+        user_quit = input("Do you want to quit? [y/n]: ")
+        if user_quit.lower() == "y":
+            break 
+
+if __name__ == "__main__":
+    main_screen()
